@@ -44,6 +44,11 @@ export const template = defineType({
         title: "Purchase Link",
         type: "url",
     }),
+    defineField({
+      name:"videoUrl",
+      title: "Video Preview",
+      type: "url",
+    }),
 
     defineField({
       name: 'badge',

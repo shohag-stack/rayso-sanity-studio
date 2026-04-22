@@ -19,6 +19,12 @@ export const components = defineType({
     }),
 
     defineField({
+      name:"video",
+      title: "Video URL",
+      type: "string"
+    }),
+
+    defineField({
         name: "preview",
         title: "Preview Image",
         type: "image"
@@ -39,13 +45,14 @@ export const components = defineType({
               {title: 'Testimonials', value: 'testimonials'},
               {title: 'Accordions', value: 'accordions'},
               {title: 'Features', value: 'features'},
+              {title: "Carousel", value: "carousel"}
             ],
           },
         },
       ],
       validation: (Rule) =>
         Rule.custom((values: string[] | undefined) => {
-          const allowed = ['heroes', 'navbars', 'pricing', 'testimonials', 'accordions', 'features']
+          const allowed = ['heroes', 'navbars', 'pricing', 'testimonials', 'accordions', 'features', 'carousel']
           if (!values) return true
 
           const invalid = values.find((v) => !allowed.includes(v))
