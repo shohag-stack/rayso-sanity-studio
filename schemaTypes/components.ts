@@ -47,14 +47,15 @@ export const components = defineType({
               {title: 'Accordions', value: 'accordions'},
               {title: 'Features', value: 'features'},
               {title: "Carousel", value: "carousel"},
-              {title: "Footers", value: "footers"}
+              {title: "Footers", value: "footers"},
+              {title: "Animation", value: "animation"}
             ],
           },
         },
       ],
       validation: (Rule) =>
         Rule.custom((values: string[] | undefined) => {
-          const allowed = ['heroes', 'navbars', 'pricing', 'faqs', 'testimonials', 'accordions', 'features', 'carousel', "footer"]
+          const allowed = ['heroes', 'navbars', 'pricing', 'faqs', 'testimonials', 'accordions', 'features', 'carousel', "footers", "animation"]
           if (!values) return true
 
           const invalid = values.find((v) => !allowed.includes(v))
