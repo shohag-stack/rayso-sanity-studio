@@ -113,8 +113,10 @@ export const template = defineType({
           { title: "Premium", value: "premium" },
           { title: "Real Estate", value: "real-estate" },
           { title: "Home Services", value: "home-services" },
+          { title: "Hotel & Resort", value: "hotel" },
           { title: "Mortgage", value: "mortgage" },
           { title: "Next.js", value: "nextjs" },
+          { title: "Framer", value: "framer" },
         ],
       },
     },
@@ -127,7 +129,9 @@ export const template = defineType({
         "real-estate",
         "home-services",
         "mortgage",
+        "hotel",
         "nextjs",
+        "framer",
       ];
 
       if (!values) return true;
