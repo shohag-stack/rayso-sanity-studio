@@ -3,6 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {template} from './schemaTypes'
 import { components } from './schemaTypes/components'
+import {post} from './schemaTypes/post'
 
 export default defineConfig({
   name: 'default',
@@ -14,6 +15,6 @@ export default defineConfig({
   plugins: [structureTool(), visionTool()],
 
   schema: {
-    types: [template, components],
+    types: [template, components, post],
   },
 })
