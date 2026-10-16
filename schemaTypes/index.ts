@@ -8,6 +8,7 @@ const TEMPLATE_CATEGORIES = [
   // Platform
   {title: 'Next.js', value: 'nextjs'},
   {title: 'Framer', value: 'framer'},
+  {title: 'Astro', value: 'astro'},
   // Business
   {title: 'Real Estate', value: 'real-estate'},
   {title: 'Mortgage & Finance', value: 'mortgage'},
