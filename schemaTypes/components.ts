@@ -19,6 +19,25 @@ export const components = defineType({
     }),
 
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 3,
+      description:
+        'One or two sentences for the component page and Google results. Leave empty to use an auto-generated line.',
+      validation: (Rule) => Rule.max(200).warning('Google shows roughly the first 160 characters.'),
+    }),
+
+    defineField({
+      name: 'template',
+      title: 'Source template',
+      type: 'reference',
+      to: [{type: 'template'}],
+      description:
+        'The template this section comes from. Its page links to that template, and the template page lists this section.',
+    }),
+
+    defineField({
       name:"video",
       title: "Video URL",
       type: "string"
@@ -48,14 +67,16 @@ export const components = defineType({
               {title: 'Features', value: 'features'},
               {title: "Carousel", value: "carousel"},
               {title: "Footers", value: "footers"},
-              {title: "Animation", value: "animation"}
+              {title: "Animation", value: "animation"},
+              {title: "Call to Action", value: "cta"},
+              {title: "Gallery", value: "gallery"}
             ],
           },
         },
       ],
       validation: (Rule) =>
         Rule.custom((values: string[] | undefined) => {
-          const allowed = ['heroes', 'navbars', 'pricing', 'faqs', 'testimonials', 'accordions', 'features', 'carousel', "footers", "animation"]
+          const allowed = ['heroes', 'navbars', 'pricing', 'faqs', 'testimonials', 'accordions', 'features', 'carousel', "footers", "animation", "cta", "gallery"]
           if (!values) return true
 
           const invalid = values.find((v) => !allowed.includes(v))
